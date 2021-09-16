@@ -1,0 +1,26 @@
+header {
+  height: 300px;
+  padding: 25px;
+  background-size: cover;
+  background-image: url("/images/image-hero-mobile.jpg");
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20px;
+    .links {
+      display: none;
+    }
+    .ham-menu {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      div {
+        background-color: $base;
+        height: 4px;
+      }
+    }
+  }
+}
