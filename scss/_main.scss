@@ -18,6 +18,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    line-height: 1.5;
     img {
       position: absolute;
       top: -28px;
@@ -25,11 +26,145 @@ main {
     p {
       color: $darkGray;
       width: 300px;
+      font-size: 14px;
     }
     &#project-card {
-      height: 250px;
+      height: 275px;
       justify-content: space-evenly;
       padding: 25px 0;
+      h3 {
+        width: 250px;
+        font-size: 1.35em;
+      }
+    }
+    &#numbers {
+      padding: 25px 10px;
+      height: 350px;
+      display: flex;
+      justify-content: space-between;
+      .number {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 85px;
+        &:nth-child(3) {
+          height: 75px;
+        }
+        h2 {
+          font-size: 1.75em;
+        }
+        p {
+          font-size: 12px;
+          color: $darkGray;
+          margin-bottom: 20px;
+        }
+        div {
+          height: 1px;
+          width: 60px;
+          background-color: $darkGray;
+        }
+      }
+      .bar {
+        width: 90%;
+        height: 15px;
+        background-color: $offWhite;
+        border-radius: 50px;
+        box-shadow: inset 3px 0 6px rgba(0, 0, 0, 0.2);
+        .progress {
+          background-color: $modCyan;
+          height: 100%;
+          width: 75%;
+          border-radius: 50px;
+          box-shadow: inset 3px 0 6px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+    &#about-card {
+      text-align: start;
+      align-items: flex-start;
+      padding: 35px 25px;
+      h4 {
+        margin-bottom: 20px;
+      }
+      p {
+        margin-bottom: 15px;
+      }
+      .pledge-card {
+        padding: 20px;
+        border: 1px solid $cardHighlight;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        h4 {
+          margin-bottom: 0;
+        }
+        .highlight {
+          font-size: 14px;
+          color: $modCyan;
+          font-weight: 500;
+        }
+        p {
+          margin: 15px 0;
+        }
+        .left {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          h2 {
+            font-size: 2em;
+          }
+          p {
+            margin: 0 8px;
+          }
+        }
+        .select-option,
+        .out-option {
+          padding: 15px 30px;
+          margin-right: 15px;
+          border: 0px solid transparent;
+          border-radius: 50px;
+          background-color: $modCyan;
+          color: $base;
+          font-weight: 500;
+          font-size: 15px;
+        }
+        .out-option {
+          background-color: $darkGray;
+        }
+      }
+    }
+    .btn-zone {
+      display: flex;
+      .back-project,
+      .bookmark {
+        height: 50px;
+        border: 0px solid transparent;
+        border-radius: 50px;
+      }
+      .back-project {
+        padding: 15px 50px;
+        margin-right: 15px;
+        background-color: $modCyan;
+        color: $base;
+        font-weight: 500;
+        font-size: 15px;
+      }
+      .bookmark {
+        display: flex;
+        flex-direction: row;
+        .mark-icon {
+          background-color: $dark;
+          border-radius: 50px;
+          padding: 25px;
+          background-image: url("/images/icon-bookmark.svg");
+          background-size: contain;
+          &:hover {
+            background-color: $darkCyan;
+          }
+        }
+        .mark {
+          display: none;
+        }
+      }
     }
   }
 }

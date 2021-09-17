@@ -113,6 +113,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  line-height: 1.5;
 }
 
 .container .card img {
@@ -123,12 +124,174 @@ main {
 .container .card p {
   color: #7a7a7a;
   width: 300px;
+  font-size: 14px;
 }
 
 .container .card#project-card {
-  height: 250px;
+  height: 275px;
   justify-content: space-evenly;
   padding: 25px 0;
+}
+
+.container .card#project-card h3 {
+  width: 250px;
+  font-size: 1.35em;
+}
+
+.container .card#numbers {
+  padding: 25px 10px;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .card#numbers .number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 85px;
+}
+
+.container .card#numbers .number:nth-child(3) {
+  height: 75px;
+}
+
+.container .card#numbers .number h2 {
+  font-size: 1.75em;
+}
+
+.container .card#numbers .number p {
+  font-size: 12px;
+  color: #7a7a7a;
+  margin-bottom: 20px;
+}
+
+.container .card#numbers .number div {
+  height: 1px;
+  width: 60px;
+  background-color: #7a7a7a;
+}
+
+.container .card#numbers .bar {
+  width: 90%;
+  height: 15px;
+  background-color: #f2f2f2;
+  border-radius: 50px;
+  box-shadow: inset 3px 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.container .card#numbers .bar .progress {
+  background-color: #3cb4ac;
+  height: 100%;
+  width: 75%;
+  border-radius: 50px;
+  box-shadow: inset 3px 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.container .card#about-card {
+  text-align: start;
+  align-items: flex-start;
+  padding: 35px 25px;
+}
+
+.container .card#about-card h4 {
+  margin-bottom: 20px;
+}
+
+.container .card#about-card p {
+  margin-bottom: 15px;
+}
+
+.container .card#about-card .pledge-card {
+  padding: 20px;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.container .card#about-card .pledge-card h4 {
+  margin-bottom: 0;
+}
+
+.container .card#about-card .pledge-card .highlight {
+  font-size: 14px;
+  color: #3cb4ac;
+  font-weight: 500;
+}
+
+.container .card#about-card .pledge-card p {
+  margin: 15px 0;
+}
+
+.container .card#about-card .pledge-card .left {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.container .card#about-card .pledge-card .left h2 {
+  font-size: 2em;
+}
+
+.container .card#about-card .pledge-card .left p {
+  margin: 0 8px;
+}
+
+.container .card#about-card .pledge-card .select-option,
+.container .card#about-card .pledge-card .out-option {
+  padding: 15px 30px;
+  margin-right: 15px;
+  border: 0px solid transparent;
+  border-radius: 50px;
+  background-color: #3cb4ac;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.container .card#about-card .pledge-card .out-option {
+  background-color: #7a7a7a;
+}
+
+.container .card .btn-zone {
+  display: flex;
+}
+
+.container .card .btn-zone .back-project,
+.container .card .btn-zone .bookmark {
+  height: 50px;
+  border: 0px solid transparent;
+  border-radius: 50px;
+}
+
+.container .card .btn-zone .back-project {
+  padding: 15px 50px;
+  margin-right: 15px;
+  background-color: #3cb4ac;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.container .card .btn-zone .bookmark {
+  display: flex;
+  flex-direction: row;
+}
+
+.container .card .btn-zone .bookmark .mark-icon {
+  background-color: black;
+  border-radius: 50px;
+  padding: 25px;
+  background-image: url("/images/icon-bookmark.svg");
+  background-size: contain;
+}
+
+.container .card .btn-zone .bookmark .mark-icon:hover {
+  background-color: #147b74;
+}
+
+.container .card .btn-zone .bookmark .mark {
+  display: none;
 }
 
 .modal-container {
