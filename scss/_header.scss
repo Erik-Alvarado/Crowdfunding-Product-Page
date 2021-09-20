@@ -8,8 +8,36 @@ header {
     flex-direction: row;
     justify-content: space-between;
     height: 20px;
+    z-index: 5;
+    position: relative;
     .links {
       display: none;
+    }
+    &.active {
+      .links {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 10px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 3.5rem;
+        z-index: 5;
+        li {
+          list-style: none;
+          padding: 20px;
+          &:nth-child(2) {
+            border-top: 1px solid $offWhite;
+            border-bottom: 1px solid $offWhite;
+          }
+          a {
+            text-decoration: none;
+            font-weight: 700;
+            color: $dark;
+          }
+        }
+      }
     }
     .ham-menu {
       width: 20px;
@@ -17,9 +45,29 @@ header {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      cursor: pointer;
       div {
+        transform-origin: left center;
+        transition: ease 0.5s;
         background-color: $base;
         height: 4px;
+        border-radius: 50px;
+      }
+      &.active {
+        height: 18px;
+        div:nth-child(2) {
+          transition: ease 0.5s;
+          width: 0;
+          opacity: 0%;
+        }
+        div:nth-child(1) {
+          transition: ease 0.5s;
+          transform: rotate(45deg);
+        }
+        div:nth-child(3) {
+          transition: ease 0.5s;
+          transform: rotate(-45deg);
+        }
       }
     }
   }
