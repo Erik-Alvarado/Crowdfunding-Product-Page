@@ -6,6 +6,7 @@ const navbar = document.querySelector('.navbar');
 const overlay = document.querySelector('#page-mask');
 const modalContain = document.querySelector('.modal-container');
 const modalSuccess = document.querySelector('.modal-success');
+const closeModal = document.querySelector('.close');
 
 hamMenu.addEventListener("click", () => {
     hamMenu.classList.toggle("active");
@@ -24,9 +25,7 @@ backer.addEventListener("click", () => {
     modalSuccess.classList.add('hide');
 })
 
-// closer.addEventListener("click", () => {
-//     overlay.classList.toggle('active');
-//     backer.classList.toggle('open');
-//     modalContain.classList.toggle('active');
-//     closer.classList.toggle('hide');
-// })
+closeModal.addEventListener("click", () => {
+    modalContain.classList.remove('active');
+    overlay.classList.remove('active');
+})

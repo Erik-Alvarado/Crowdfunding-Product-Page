@@ -203,51 +203,80 @@ main {
         width: 300px;
         font-size: 14px;
         line-height: 1.5;
+        margin-bottom: 25px;
       }
     }
     .pledge-card {
       border-radius: 10px;
       position: relative;
+      input[type="radio"]:before {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: $base;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid $offWhite;
+      }
+      input[type="radio"]:checked:after {
+        width: 10px;
+        height: 10px;
+        border-radius: 15px;
+        top: -23px;
+        left: 3.5px;
+        position: relative;
+        background-color: #3cb4ac;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        // border: 2px solid white;
+      }
+      input:checked + .pledge-details {
+        border-color: $modCyan;
+      }
+      &#no-reward {
+        .pledge-option {
+          top: 30px;
+        }
+      }
+      .pledge-option {
+        position: absolute;
+        left: 30px;
+        top: 40px;
+      }
       .pledge-details {
-        border: 1px solid $offWhite;
-        padding: 15px;
+        border: 2px solid $offWhite;
+        padding: 25px;
         display: flex;
         flex-direction: column;
-        margin-top: 25px;
+        margin-bottom: 25px;
         border-radius: 10px;
+        &#out {
+          opacity: 50%;
+        }
+        p {
+          font-size: 15px;
+        }
         .pledge-txt {
-          margin-left: 15px;
+          margin-left: 35px;
+        }
+        .left {
+          display: flex;
+          align-items: center;
+          p {
+            margin-bottom: 0;
+            margin-left: 8px;
+          }
         }
         .topper,
         .no-pledge {
           display: flex;
           align-items: center;
-          input[type="radio"]:after {
-            width: 15px;
-            height: 15px;
-            border-radius: 15px;
-            top: -2px;
-            left: -1px;
-            position: relative;
-            background-color: #d1d3d1;
-            content: "";
-            display: inline-block;
-            visibility: visible;
-            border: 2px solid white;
-          }
-          input[type="radio"]:checked:after {
-            width: 15px;
-            height: 15px;
-            border-radius: 15px;
-            top: -2px;
-            left: -1px;
-            position: relative;
-            background-color: $modCyan;
-            content: "";
-            display: inline-block;
-            visibility: visible;
-            border: 2px solid white;
-          }
+          margin-bottom: 25px;
         }
       }
     }

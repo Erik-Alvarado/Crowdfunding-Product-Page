@@ -402,6 +402,7 @@ main {
   width: 300px;
   font-size: 14px;
   line-height: 1.5;
+  margin-bottom: 25px;
 }
 
 .modal-container.active .pledge-card {
@@ -409,53 +410,83 @@ main {
   position: relative;
 }
 
+.modal-container.active .pledge-card input[type="radio"]:before {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #fff;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #f2f2f2;
+}
+
+.modal-container.active .pledge-card input[type="radio"]:checked:after {
+  width: 10px;
+  height: 10px;
+  border-radius: 15px;
+  top: -23px;
+  left: 3.5px;
+  position: relative;
+  background-color: #3cb4ac;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+}
+
+.modal-container.active .pledge-card input:checked + .pledge-details {
+  border-color: #3cb4ac;
+}
+
+.modal-container.active .pledge-card#no-reward .pledge-option {
+  top: 30px;
+}
+
+.modal-container.active .pledge-card .pledge-option {
+  position: absolute;
+  left: 30px;
+  top: 40px;
+}
+
 .modal-container.active .pledge-card .pledge-details {
-  border: 1px solid #f2f2f2;
-  padding: 15px;
+  border: 2px solid #f2f2f2;
+  padding: 25px;
   display: flex;
   flex-direction: column;
-  margin-top: 25px;
+  margin-bottom: 25px;
   border-radius: 10px;
 }
 
+.modal-container.active .pledge-card .pledge-details#out {
+  opacity: 50%;
+}
+
+.modal-container.active .pledge-card .pledge-details p {
+  font-size: 15px;
+}
+
 .modal-container.active .pledge-card .pledge-details .pledge-txt {
-  margin-left: 15px;
+  margin-left: 35px;
+}
+
+.modal-container.active .pledge-card .pledge-details .left {
+  display: flex;
+  align-items: center;
+}
+
+.modal-container.active .pledge-card .pledge-details .left p {
+  margin-bottom: 0;
+  margin-left: 8px;
 }
 
 .modal-container.active .pledge-card .pledge-details .topper,
 .modal-container.active .pledge-card .pledge-details .no-pledge {
   display: flex;
   align-items: center;
-}
-
-.modal-container.active .pledge-card .pledge-details .topper input[type="radio"]:after,
-.modal-container.active .pledge-card .pledge-details .no-pledge input[type="radio"]:after {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  top: -2px;
-  left: -1px;
-  position: relative;
-  background-color: #d1d3d1;
-  content: "";
-  display: inline-block;
-  visibility: visible;
-  border: 2px solid white;
-}
-
-.modal-container.active .pledge-card .pledge-details .topper input[type="radio"]:checked:after,
-.modal-container.active .pledge-card .pledge-details .no-pledge input[type="radio"]:checked:after {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  top: -2px;
-  left: -1px;
-  position: relative;
-  background-color: #3cb4ac;
-  content: "";
-  display: inline-block;
-  visibility: visible;
-  border: 2px solid white;
+  margin-bottom: 25px;
 }
 
 .modal-success.hide {
