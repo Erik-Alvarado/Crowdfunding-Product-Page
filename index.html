@@ -157,6 +157,11 @@
                 our project. As a backer, you will be signed up to receive
                 product updates via email.
               </p>
+              <div class="pledge-enter">
+                <div class="amount">
+                  <input type="submit" class="continue-btn" value="Continue" />
+                </div>
+              </div>
             </span>
           </label>
           <label class="pledge-card" id="bamboo">
@@ -180,8 +185,20 @@
               <div class="pledge-enter">
                 <span class="pledge-highlight">Enter your pledge</span>
                 <div class="amount">
-                  <div class="dollar">$25</div>
-                  <button class="continue-btn">Continue</button>
+                  <div class="currency">
+                    <span class="sign">$</span>
+                    <input
+                      type="number"
+                      name="dollar amount"
+                      class="dollar"
+                      id="Mahogany"
+                      min="25"
+                      max="999"
+                      pattern="[0-9]{2,}"
+                      placeholder="25"
+                    />
+                  </div>
+                  <input type="submit" class="continue-btn" value="Continue" />
                 </div>
               </div>
             </span>
@@ -207,8 +224,20 @@
               <div class="pledge-enter">
                 <span class="pledge-highlight">Enter your pledge</span>
                 <div class="amount">
-                  <div class="dollar">$75</div>
-                  <button class="continue-btn">Continue</button>
+                  <div class="currency">
+                    <span class="sign">$</span>
+                    <input
+                      type="number"
+                      name="dollar amount"
+                      class="dollar"
+                      id="blk-stand"
+                      min="75"
+                      max="999"
+                      pattern="[0-9]{2,}"
+                      placeholder="75"
+                    />
+                  </div>
+                  <input type="submit" class="continue-btn" value="Continue" />
                 </div>
               </div>
             </span>
@@ -234,8 +263,20 @@
               <div class="pledge-enter">
                 <span class="pledge-highlight">Enter your pledge</span>
                 <div class="amount">
-                  <div class="dollar">$200</div>
-                  <button class="continue-btn">Continue</button>
+                  <div class="currency">
+                    <span class="sign">$</span>
+                    <input
+                      type="number"
+                      name="dollar amount"
+                      class="dollar"
+                      id="Mahogany"
+                      min="200"
+                      max="999"
+                      pattern="[0-9]{3,}"
+                      placeholder="200"
+                    />
+                  </div>
+                  <input type="submit" class="continue-btn" value="Continue" />
                 </div>
               </div>
             </span>
@@ -249,7 +290,7 @@
             Monitor Riser worldwide. You will get an email once our campaign is
             completed.
           </p>
-          <button class="back-project" href="#">Got it!</button>
+          <button class="close" href="#">Got it!</button>
         </div>
       </section>
     </main>
