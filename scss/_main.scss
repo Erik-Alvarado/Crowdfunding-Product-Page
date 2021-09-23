@@ -8,33 +8,60 @@ main {
   margin: 0 25px 25px;
   top: 250px;
   padding-bottom: 50px;
+
+  @include breakpoint-up(small) {
+    margin: 0 50px 25px;
+  }
+  @include breakpoint-up(medium) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .card {
     background-color: $base;
     padding: 25px;
     text-align: center;
     border-radius: 10px;
     margin-bottom: 25px;
+    width: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     line-height: 1.5;
+    @include breakpoint-up(medium) {
+      max-width: 670px;
+    }
     img {
       position: absolute;
       top: -28px;
     }
     p {
       color: $darkGray;
-      width: 300px;
       font-size: 14px;
     }
     &#project-card {
       height: 275px;
       justify-content: space-evenly;
       padding: 25px 0;
+      @include breakpoint-up(small) {
+        padding: 25px 15px;
+      }
       h3 {
         width: 250px;
         font-size: 1.35em;
+        @include breakpoint-up(small) {
+          font-size: 2rem;
+          width: 100%;
+        }
+      }
+      p {
+        width: 300px;
+        @include breakpoint-up(small) {
+          width: 100%;
+          font-size: 1.1rem;
+        }
       }
     }
     &#numbers {
@@ -42,26 +69,68 @@ main {
       height: 350px;
       display: flex;
       justify-content: space-between;
-      .number {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 85px;
-        &:nth-child(3) {
-          height: 75px;
+      @include breakpoint-up(small) {
+        padding: 30px;
+        height: 100%;
+      }
+      .number-holder {
+        @include breakpoint-up(small) {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          align-items: center;
         }
-        h2 {
-          font-size: 1.75em;
-        }
-        p {
-          font-size: 12px;
-          color: $darkGray;
-          margin-bottom: 20px;
-        }
-        div {
-          height: 1px;
-          width: 60px;
-          background-color: $darkGray;
+        .number {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 85px;
+          margin-bottom: 10px;
+          // width: 250px;
+          @include breakpoint-up(small) {
+            flex-direction: row;
+            text-align: start;
+            margin-right: 45px;
+          }
+          .data {
+            @include breakpoint-up(small) {
+              margin-right: 30px;
+            }
+          }
+          &:nth-child(3) {
+            height: 75px;
+          }
+          &:nth-child(2) {
+            @include breakpoint-up(small) {
+              margin-right: 30px;
+            }
+            .data {
+              @include breakpoint-up(small) {
+                margin-right: 75px;
+              }
+            }
+          }
+          h2 {
+            font-size: 1.75em;
+          }
+          p {
+            font-size: 12px;
+            color: $darkGray;
+            margin-bottom: 20px;
+            @include breakpoint-up(small) {
+              margin: 0;
+              font-size: 0.875rem;
+            }
+          }
+          .divide {
+            height: 1px;
+            width: 60px;
+            background-color: $darkGray;
+            @include breakpoint-up(small) {
+              height: 50px;
+              width: 1px;
+            }
+          }
         }
       }
       .bar {
@@ -70,6 +139,9 @@ main {
         background-color: $offWhite;
         border-radius: 50px;
         box-shadow: inset 3px 0 6px rgba(0, 0, 0, 0.2);
+        @include breakpoint-up(small) {
+          width: 100%;
+        }
         .progress {
           background-color: $modCyan;
           height: 100%;
@@ -81,63 +153,118 @@ main {
     }
     &#about-card {
       text-align: start;
-      align-items: flex-start;
+      align-items: center;
       padding: 35px 25px;
       margin-bottom: 0;
-      h4 {
-        margin-bottom: 20px;
+      @include breakpoint-up(small) {
+        padding: 35px;
       }
-      p {
-        margin-bottom: 15px;
+
+      .info {
+        width: 100%;
+        h4 {
+          margin-bottom: 20px;
+          width: 100%;
+          @include breakpoint-up(small) {
+            font-size: 1.25rem;
+          }
+        }
+        p {
+          margin-bottom: 15px;
+          width: 100%;
+          @include breakpoint-up(small) {
+            font-size: 1rem;
+          }
+        }
       }
       .pledge-card {
-        padding: 20px;
+        padding: 30px;
         border: 1px solid $cardHighlight;
         border-radius: 10px;
         margin-bottom: 20px;
-        h4 {
-          margin-bottom: 0;
-        }
-        .highlight {
-          font-size: 14px;
-          color: $modCyan;
-          font-weight: 500;
+        width: 100%;
+        .pledge-top {
+          @include breakpoint-up(small) {
+            display: flex;
+            justify-content: space-between;
+          }
+          h4 {
+            margin-bottom: 0;
+            @include breakpoint-up(small) {
+              font-size: 1.25rem;
+            }
+          }
+          .highlight {
+            font-size: 14px;
+            color: $modCyan;
+            font-weight: 500;
+            @include breakpoint-up(small) {
+              font-size: 1rem;
+            }
+          }
         }
         p {
           margin: 15px 0;
-        }
-        .left {
-          display: flex;
-          align-items: center;
-          margin-bottom: 20px;
-          h2 {
-            font-size: 2em;
+          width: 100%;
+          @include breakpoint-up(small) {
+            font-size: 1rem;
           }
-          p {
-            margin: 0 8px;
+        }
+        .pledge-bot {
+          @include breakpoint-up(small) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .left {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            @include breakpoint-up(small) {
+              margin: 0;
+            }
+            h2 {
+              font-size: 2em;
+            }
+            p {
+              margin: 0 8px;
+            }
+          }
+
+          .select-option,
+          .out-option {
+            padding: 15px 30px;
+            margin-right: 15px;
+            border: 0px solid transparent;
+            border-radius: 50px;
+            background-color: $modCyan;
+            color: $base;
+            font-weight: 500;
+            font-size: 15px;
+            @include breakpoint-up(small) {
+              margin: 0;
+            }
+            &:hover {
+              background-color: $darkCyan;
+            }
+          }
+          .out-option {
+            background-color: $darkGray;
           }
         }
         &#out {
           opacity: 50%;
         }
-        .select-option,
-        .out-option {
-          padding: 15px 30px;
-          margin-right: 15px;
-          border: 0px solid transparent;
-          border-radius: 50px;
-          background-color: $modCyan;
-          color: $base;
-          font-weight: 500;
-          font-size: 15px;
-        }
-        .out-option {
-          background-color: $darkGray;
-        }
       }
     }
     .btn-zone {
       display: flex;
+      justify-content: center;
+      width: 100%;
+      @include breakpoint-up(small) {
+        justify-content: space-between;
+        padding: 0 50px;
+      }
       .back-project,
       .bookmark {
         height: 50px;
@@ -151,24 +278,45 @@ main {
         color: $base;
         font-weight: 500;
         font-size: 15px;
+        &:hover {
+          background-color: $darkCyan;
+        }
+        @include breakpoint-up(small) {
+          font-size: 1rem;
+        }
       }
       .bookmark {
         display: flex;
         flex-direction: row;
+        align-items: center;
+        &.booked {
+          transition: all ease 0.5s;
+          background-blend-mode: screen;
+          .mark-icon {
+            transition: all ease 0.5s;
+            background-color: $darkCyan;
+            background-blend-mode: screen;
+          }
+          .mark {
+            color: $darkCyan;
+          }
+        }
         .mark-icon {
           background-color: $dark;
           border-radius: 50px;
           padding: 25px;
           background-image: url("/images/icon-bookmark.svg");
           background-size: contain;
-          &.booked {
-            transition: all ease 0.5s;
-            background-color: $darkCyan;
-            background-blend-mode: screen;
-          }
         }
         .mark {
           display: none;
+          @include breakpoint-up(small) {
+            display: flex;
+            margin: 0 25px 0 15px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: $darkGray;
+          }
         }
       }
     }
@@ -182,11 +330,25 @@ main {
     z-index: 5;
     top: 5rem;
     position: absolute;
+    @include breakpoint-up(x-small) {
+      right: 0;
+      left: 0;
+      align-items: center;
+      margin: 0 25px;
+    }
+    @include breakpoint-up(small) {
+      margin: 0;
+    }
     .modal-select {
       margin: 0 25px;
       background-color: $base;
       border-radius: 10px;
       padding: 25px;
+      @include breakpoint-up(large) {
+        width: 100%;
+        max-width: 42rem;
+        padding: 40px;
+      }
       &.hide {
         display: none;
       }
@@ -195,6 +357,11 @@ main {
         justify-content: space-between;
         margin-bottom: 25px;
         align-items: center;
+        h3 {
+          @include breakpoint-up(large) {
+            font-size: 1.5rem;
+          }
+        }
         .close {
           height: 100%;
           width: 1rem;
@@ -207,6 +374,10 @@ main {
         font-size: 14px;
         line-height: 1.5;
         margin-bottom: 25px;
+        @include breakpoint-up(medium) {
+          font-size: 1rem;
+          width: 100%;
+        }
       }
     }
     .pledge-card {
@@ -360,11 +531,25 @@ main {
   align-items: center;
   justify-content: space-around;
   height: 400px;
-
+  position: fixed;
+  @include breakpoint-up(small) {
+    margin: 0 50px;
+  }
+  @include breakpoint-up(large) {
+    max-width: 35rem;
+  }
+  h3 {
+    @include breakpoint-up(small) {
+      font-size: 1.75rem;
+    }
+  }
   p {
     line-height: 1.5;
     color: $darkGray;
     font-size: 14px;
+    @include breakpoint-up(small) {
+      font-size: 1rem;
+    }
   }
 
   img {
@@ -377,6 +562,9 @@ main {
     font-weight: 700;
     color: $base;
     border-radius: 50px;
+    &:hover {
+      background-color: $darkCyan;
+    }
   }
   &.hide {
     display: none;

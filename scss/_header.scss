@@ -3,6 +3,15 @@ header {
   padding: 25px;
   background-size: cover;
   background-image: url("/images/image-hero-mobile.jpg");
+  @include breakpoint-up(large) {
+    padding: 2rem 5rem;
+    background-image: url("/images/image-hero-desktop.jpg");
+  }
+  @include breakpoint-up(x-large) {
+    height: 350px;
+    background-position: center;
+    background-size: contain;
+  }
   .navbar {
     display: flex;
     flex-direction: row;
@@ -12,6 +21,20 @@ header {
     position: relative;
     .links {
       display: none;
+      color: $base;
+      @include breakpoint-up(large) {
+        display: flex;
+      }
+      li {
+        list-style: none;
+        a {
+          padding-left: 15px;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 1rem;
+          color: $base;
+        }
+      }
     }
     &.active {
       .links {
@@ -46,6 +69,9 @@ header {
       flex-direction: column;
       justify-content: space-between;
       cursor: pointer;
+      @include breakpoint-up(large) {
+        display: none;
+      }
       div {
         transform-origin: left center;
         transition: ease 0.5s;
