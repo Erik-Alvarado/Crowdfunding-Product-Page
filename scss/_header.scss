@@ -10,7 +10,6 @@ header {
   @include breakpoint-up(x-large) {
     height: 350px;
     background-position: center;
-    background-size: contain;
   }
   .navbar {
     display: flex;

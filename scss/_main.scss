@@ -51,15 +51,21 @@ main {
       h3 {
         width: 250px;
         font-size: 1.35em;
+        @include breakpoint-up(x-small) {
+          font-size: 1.75rem;
+          width: 100%;
+        }
         @include breakpoint-up(small) {
           font-size: 2rem;
-          width: 100%;
         }
       }
       p {
         width: 300px;
-        @include breakpoint-up(small) {
+        @include breakpoint-up(x-small) {
+          font-size: 1rem;
           width: 100%;
+        }
+        @include breakpoint-up(small) {
           font-size: 1.1rem;
         }
       }
@@ -241,6 +247,7 @@ main {
             color: $base;
             font-weight: 500;
             font-size: 15px;
+            transition: ease 0.3s;
             @include breakpoint-up(small) {
               margin: 0;
             }
@@ -344,8 +351,11 @@ main {
       background-color: $base;
       border-radius: 10px;
       padding: 25px;
-      @include breakpoint-up(large) {
+      @include breakpoint-up(small) {
         width: 100%;
+        max-width: 30rem;
+      }
+      @include breakpoint-up(large) {
         max-width: 42rem;
         padding: 40px;
       }
@@ -370,7 +380,6 @@ main {
       }
       p {
         color: $darkGray;
-        width: 300px;
         font-size: 14px;
         line-height: 1.5;
         margin-bottom: 25px;
@@ -417,6 +426,16 @@ main {
           opacity: 100%;
           padding: 25px;
           display: flex;
+          @include breakpoint-up(large) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
+        .amount {
+          @include breakpoint-up(large) {
+            margin-top: 0;
+          }
         }
       }
       &#no-reward {
@@ -428,6 +447,9 @@ main {
           .continue-btn {
             padding: 10px 40px;
           }
+        }
+        .pledge-txt {
+          margin-top: 0;
         }
       }
     }
@@ -443,20 +465,40 @@ main {
       margin-bottom: 25px;
       border-radius: 10px;
       transition: ease 0.5s;
+      @include breakpoint-up(large) {
+        display: grid;
+      }
       &#out {
         opacity: 50%;
       }
       p {
         font-size: 15px;
         padding: 0 25px;
+        @include breakpoint-up(large) {
+          grid-column: span 2;
+        }
       }
       .pledge-txt {
         margin-left: 35px;
+        @include breakpoint-up(large) {
+          display: flex;
+          margin-top: 10px;
+        }
+        h4 {
+          @include breakpoint-up(large) {
+            margin-right: 10px;
+          }
+        }
       }
       .left {
         display: flex;
         align-items: center;
         padding: 0 25px 25px;
+        @include breakpoint-up(large) {
+          grid-row: 1;
+          grid-column: 3;
+          padding: 25px;
+        }
         p {
           margin-bottom: 0;
           margin-left: 8px;
@@ -470,6 +512,10 @@ main {
         border-top: 2px solid $offWhite;
         flex-direction: column;
         justify-content: center;
+        @include breakpoint-up(large) {
+          grid-row: 4;
+          grid-column: span 3;
+        }
         .pledge-highlight {
           text-align: center;
           color: $darkGray;
@@ -478,20 +524,32 @@ main {
           display: flex;
           justify-content: space-around;
           margin-top: 25px;
-          .dollar,
           .continue-btn {
             padding: 10px 25px;
             border-radius: 50px;
           }
+          .dollar {
+            border-radius: 50px;
+            padding: 10px 20px;
+            &:focus,
+            &:focus-visible,
+            &:focus-within,
+            &:active {
+              border-color: $modCyan !important;
+            }
+          }
           .currency {
             position: relative;
             font-weight: 700;
+            @include breakpoint-up(large) {
+              margin-right: 10px;
+            }
             .sign {
               opacity: 50%;
               position: absolute;
               color: $darkGray;
-              left: 20px;
-              top: 12px;
+              left: 15px;
+              top: 11px;
               font-size: 14px;
             }
             .dollar {
@@ -500,6 +558,9 @@ main {
               width: 5rem;
               text-align: center;
               outline: transparent;
+              @include breakpoint-up(large) {
+                text-align: end;
+              }
             }
           }
           .continue-btn {
@@ -515,6 +576,18 @@ main {
         padding: 25px;
         display: flex;
         align-items: center;
+        @include breakpoint-up(large) {
+          grid-column: span 2;
+        }
+        .highlight {
+          color: $modCyan;
+        }
+        h4 {
+          transition: ease 0.3s;
+          &:hover {
+            color: $modCyan;
+          }
+        }
       }
     }
   }
